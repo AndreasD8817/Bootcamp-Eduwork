@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil Biodata Saya</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/custom.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#about-me-section">About Me</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#portofolio">Portofolio</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#contactModal"
+                >
+                  Kontak Saya
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Video
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Frontend</a></li>
+                  <li><a class="dropdown-item" href="#">Backend</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Lainnya...</a></li>
+                </ul>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li> -->
+              <li class="nav-item">
+                <button class="btn btn-outline-success" type="submit">Download CV</button>
+             </ul>
+             
+          </div>
+        </div>
+      </nav>
+
+      <!-- <div style="padding-top: 70px"></div> -->
+      <section class="container d-flex align-items-center info-item" id="header">
+        <div class="row align-items-center" id="header">
+          <div class="row w-100">
+          <div class="col-md-6">
+            <h4 class="text-start">Hai, saya</h4>
+            <h4 class="text-start">Andreas Damai Chrestianto</h4>
+            <h1 class="h1 text-start fw-bold">Selamat Datang</h1>
+            <h1 class="h1 text-end fw-bold">di Website Saya</h1>
+            <p class="lead">
+              Ini adalah contoh header dengan dua kolom.
+              Kolom kiri berisi teks seperti ini dan tombol ajakan (call to
+              action).
+            </p>
+            <div class="text-start">
+            <a type="button" class="btn btn-info" href="#about-me-section">
+              Pelajari Lebih Lanjut
+            </a>
+            </div>
+          </div>
+          
+          <div class="col-md-6 text-center">
+            <img
+              src="/profil-biodata-saya/foto-profil.jpg"
+              alt="Gambar Profil Saya"
+              class="img-fluid w-75 mx-auto d-block rounded"
+            />
+            <div class="mt-3">
+              <a href="#" target="_blank"class="text-decoration-none me-3">
+                <i class="fab fa-facebook fa-2x text-primary"></i></a>
+                <a href="#" target="_blank" class="text-decoration-none">
+                <i class="fab fa-instagram fa-2x text-danger"></i></a>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <section class="container py-5" id="about-me-section">
+        <div class="row">
+          <div class="col-12 text-center mb-5">
+            <h2 class="display-4 fw-bold">About Me</h2>
+            <p class="lead text-muted mx-auto" style="max-width: 700px;">
+              Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa
+              nibh lectus netus in. Aliquet donec morbi convallis pretium. Turpis
+              tempus pharetra
+            </p>
+          </div>
+        </div>
+      
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-6 col-lg-4">
+            <div class="info-item">
+              <div class="icon-wrapper d-flex align-items-center mb-2">
+                <i class="fas fa-user fa-2x text-warning me-3"></i>
+                <div>
+                  <h3 class="fw-bold m-0">Full Name</h3>
+                  <p class="mb-0 text-muted">Andreas Damai Chrestianto</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col-md-6 col-lg-4">
+            <div class="info-item">
+              <div class="icon-wrapper d-flex align-items-center mb-2">
+                <i class="fas fa-graduation-cap fa-2x text-warning me-3"></i>
+                <div>
+                  <h3 class="fw-bold m-0">Education</h3>
+                  <p class="mb-0 text-muted">SMA Saja</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col-md-6 col-lg-4">
+            <div class="info-item">
+              <div class="icon-wrapper d-flex align-items-center mb-2">
+                <i class="fas fa-briefcase fa-2x text-warning me-3"></i>
+                <div>
+                  <h3 class="fw-bold m-0">Pekerjaan</h3>
+                  <p class="mb-0 text-muted">IT Support DPRD Kota Surabaya</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col-md-6 col-lg-4">
+            <div class="info-item">
+              <div class="icon-wrapper d-flex align-items-center mb-2">
+                <i class="fas fa-address-book fa-2x text-warning me-3"></i>
+                <div>
+                  <h3 class="fw-bold m-0">Contact</h3>
+                  <p class="mb-0 text-muted">08972440601</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col-md-6 col-lg-4">
+            <div class="info-item">
+              <div class="icon-wrapper d-flex align-items-center mb-2">
+                <i class="fas fa-dumbbell fa-2x text-warning me-3"></i>
+                <div>
+                  <h3 class="fw-bold m-0">Hobi</h3>
+                  <p class="mb-0 text-muted">Coding</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col-md-6 col-lg-4">
+            <div class="info-item">
+              <div class="icon-wrapper d-flex align-items-center mb-2">
+                <i class="fas fa-map-marker-alt fa-2x text-warning me-3"></i>
+                <div>
+                  <h3 class="fw-bold m-0">Alamat</h3>
+                  <p class="mb-0 text-muted">Tembok Gede 1/37</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <section class="container py-5" id="portofolio">
+        <div class="row">
+          <div class="col-12 text-center mb-5">
+            <h2 class="display-4 fw-bold">Portofolio</h2>
+            <p class="lead text-muted mx-auto" style="max-width: 700px;">
+              Beberapa proyek yang pernah saya kerjakan. Lorem ipsum dolor sit amet
+              consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet
+              donec morbi convallis pretium. Turpis tempus pharetra
+            </p>
+          </div>
+        </div>
+      
+        <div id="portfolioCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <div class="row justify-content-center g-4">
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100 shadow-sm">
+                    <img
+                      src="https://images.unsplash.com/photo-1751833720827-b8f8138c96e0?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      class="card-img-top"
+                      alt="Proyek 1"
+                    />
+                    <div class="card-body text-center">
+                      <h4 class="card-title fw-bold">Proyek 1</h4>
+                      <p class="card-text text-muted">
+                        Deskripsi singkat mengenai proyek pertama yang dikerjakan.
+                      </p>
+                      <button type="button" class="btn btn-primary mt-2" 
+                      data-bs-toggle="modal" 
+                      data-bs-target="#projectModal1">
+                      Lihat Detail
+                    </button>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100 shadow-sm">
+                    <img
+                      src="https://images.unsplash.com/photo-1751623368912-a8057135ec2f?q=80&w=692&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      class="card-img-top"
+                      alt="Proyek 2"
+                    />
+                    <div class="card-body text-center">
+                      <h4 class="card-title fw-bold">Proyek 2</h4>
+                      <p class="card-text text-muted">
+                        Deskripsi singkat mengenai proyek kedua yang dikerjakan.
+                      </p>
+                      <button
+                        type="button"
+                        class="btn btn-primary mt-2"
+                        data-bs-toggle="modal"
+                        data-bs-target="#projectModal2"
+                      >
+                        Lihat Detail
+                      </button>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100 shadow-sm">
+                    <img
+                      src="https://plus.unsplash.com/premium_photo-1747851400213-5140b43aee3b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      class="card-img-top"
+                      alt="Proyek 3"
+                    />
+                    <div class="card-body text-center">
+                      <h4 class="card-title fw-bold">Proyek 3</h4>
+                      <p class="card-text text-muted">
+                        Deskripsi singkat mengenai proyek ketiga yang dikerjakan.
+                      </p>
+                      <a href="#" class="btn btn-primary mt-2">Lihat Detail</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="carousel-item" data-bs-interval="2000">
+              <div class="row justify-content-center g-4">
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100 shadow-sm">
+                    <img
+                      src="https://images.unsplash.com/photo-1749498783004-884cfbba84bf?q=80&w=686&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      class="card-img-top"
+                      alt="Proyek 4"
+                    />
+                    <div class="card-body text-center">
+                      <h4 class="card-title fw-bold">Proyek 4</h4>
+                      <p class="card-text text-muted">
+                        Deskripsi singkat mengenai proyek keempat yang dikerjakan.
+                      </p>
+                      <a href="#" class="btn btn-primary mt-2">Lihat Detail</a>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100 shadow-sm">
+                    <img
+                      src="https://images.unsplash.com/photo-1749476695941-e03f73d3c7e7?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      class="card-img-top"
+                      alt="Proyek 5"
+                    />
+                    <div class="card-body text-center">
+                      <h4 class="card-title fw-bold">Proyek 5</h4>
+                      <p class="card-text text-muted">
+                        Deskripsi singkat mengenai proyek kelima yang dikerjakan.
+                      </p>
+                      <a href="#" class="btn btn-primary mt-2">Lihat Detail</a>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-md-6 col-lg-4">
+                  <div class="card h-100 shadow-sm">
+                    <img
+                      src="https://plus.unsplash.com/premium_photo-1750530102262-a7df14474cb4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      class="card-img-top"
+                      alt="Proyek 6"
+                    />
+                    <div class="card-body text-center">
+                      <h4 class="card-title fw-bold">Proyek 6</h4>
+                      <p class="card-text text-muted">
+                        Deskripsi singkat mengenai proyek keenam yang dikerjakan.
+                      </p>
+                      <a href="#" class="btn btn-primary mt-2">Lihat Detail</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+      
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#portfolioCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#portfolioCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <!-- MODAL Kontak saya -->
+    <div
+      class="modal fade"
+      id="contactModal"
+      tabindex="-1"
+      aria-labelledby="contactModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header d-flex justify-content-between align-items-center">
+            <div style="width: 2rem;"></div> 
+            <h1 class="modal-title fs-5 text-center flex-grow-1 fw-bold" id="contactModalLabel">
+              Hubungi Saya
+            </h1>
+            <div class="ms-auto">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="contactName" class="form-label">Nama Lengkap</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="contactName"
+                  placeholder="Masukkan nama Anda"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="contactEmail" class="form-label">Alamat Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="contactEmail"
+                  placeholder="nama@contoh.com"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="contactMessage" class="form-label">Pesan Anda</label>
+                <textarea
+                  class="form-control"
+                  id="contactMessage"
+                  rows="5"
+                  placeholder="Tulis pesan Anda di sini..."
+                  required
+                ></textarea>
+              </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Tutup
+            </button>
+            <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL PORTOFOLIO -->
+    <div
+      class="modal fade"
+      id="projectModal1"
+      tabindex="-1"
+      aria-labelledby="projectModal1Label"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header d-flex justify-content-between align-items-center">
+            <div style="width: 2rem;"></div> 
+            <h1 class="modal-title fs-5 text-center flex-grow-1 fw-bold" id="projectModal1Label">
+              Detail Proyek 1
+            </h1>
+          
+            <div class="ms-auto">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+          </div>
+          <div class="modal-body">
+            <h5>Ringkasan Proyek:</h5>
+            <p>
+              Ini adalah detail lebih lanjut tentang Proyek 1. Anda bisa
+              menambahkan gambar, daftar fitur, tautan demo, atau teks panjang di
+              sini. Proyek ini melibatkan pengembangan aplikasi web menggunakan
+              teknologi X, Y, dan Z.
+            </p>
+            <div id="project1Carousel" class="carousel slide mb-3">
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#project1Carousel"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#project1Carousel"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#project1Carousel"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="https://images.unsplash.com/photo-1751013781844-fa6a78089e49?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    class="d-block w-100"
+                    alt="Gambar Proyek 1.1"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://media.istockphoto.com/id/1280701638/id/foto/hari-musim-gugur-yang-cerah-di-gunung-tersadia-di-pegunungan-alpen-italia.jpg?s=2048x2048&w=is&k=20&c=fQe1kKWNM-CBlqjzLeDD-08VONICDySLVrN_ZDtq8kE="
+                    class="d-block w-100"
+                    alt="Gambar Proyek 1.2"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://media.istockphoto.com/id/1388120505/id/foto/hari-musim-gugur-yang-cerah-di-gunung-tersadia-di-pegunungan-alpen-italia.jpg?s=2048x2048&w=is&k=20&c=pz7ebNmYcsagVfXtpi_lSZuxI4FaOult2uF1l9ZC6oA="
+                    class="d-block w-100"
+                    alt="Gambar Proyek 1.3"
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#project1Carousel"
+                data-bs-slide="prev"
+              >
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#project1Carousel"
+                data-bs-slide="next"
+              >
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+            <h6>Teknologi yang Digunakan:</h6>
+            <ul>
+              <li>HTML5</li>
+              <li>CSS3 (Bootstrap)</li>
+              <li>JavaScript (React.js)</li>
+              <li>Node.js (Express)</li>
+              <li>MongoDB</li>
+            </ul>
+            <div class="modal-body">
+              <div class="text-center">
+                <a href="#" class="btn btn-info mt-3" target="_blank"
+                  >Kunjungi Proyek Online</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Tutup
+            </button>
+            </div>
+        </div>
+      </div>
+    </div>
+
+<div
+  class="modal fade"
+  id="projectModal2"
+  tabindex="-1"
+  aria-labelledby="projectModal2Label"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="projectModal2Label">
+          Detail Proyek 2
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>Ini adalah detail untuk Proyek 2. Ganti konten ini sesuai kebutuhanmu.</p>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >
+          Tutup
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

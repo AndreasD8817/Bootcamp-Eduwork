@@ -1,0 +1,37 @@
+/* CSS Kustom untuk membuat halaman penuh */
+html,
+body {
+  height: 100%; /* Penting: html dan body harus 100% tinggi viewport */
+  margin: 0; /* Pastikan tidak ada margin default */
+  padding: 0; /* Pastikan tidak ada padding default */
+}
+
+/* Pastikan elemen di dalam section juga mengambil tinggi penuh */
+#header {
+  min-height: 100vh; /* Setidaknya 100% tinggi viewport */
+}
+.info-item {
+  background-color: #fff; /* Latar belakang putih */
+  border-radius: 8px; /* Sudut sedikit membulat */
+  padding: 20px; /* Padding di dalam kotak */
+  text-align: left; /* Teks rata kiri di dalam kotak */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+  height: 100%; /* Memastikan semua kotak memiliki tinggi yang sama dalam satu baris */
+}
+
+/* Modifikasi atau hapus jika tidak diperlukan lagi karena icon-wrapper sudah d-flex */
+
+.info-item .icon-wrapper h3 {
+  font-size: 1.25rem; /* Ukuran judul informasi */
+  font-weight: 700; /* Tebal */
+  /* margin-top: 5px; */ /* Ini bisa dihapus jika sudah ada m-0 di h3 */
+  color: #343a40; /* Warna teks judul */
+}
+
+.info-item p {
+  margin-bottom: 0; /* Menghilangkan margin bawah default p */
+  color: #6c757d; /* Warna teks deskripsi */
+}
+.warna-abang {
+  color: #dc3545; /* Warna merah */
+}

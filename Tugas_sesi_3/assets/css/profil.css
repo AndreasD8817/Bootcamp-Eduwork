@@ -1,0 +1,192 @@
+/* CSS Sederhana untuk styling dasar */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Jenis font yang lebih modern */
+  margin: 0; /* Menghilangkan margin default body */
+  padding: 0; /* Menghilangkan padding default body */
+  background-color: #f4f7f6; /* Warna latar belakang body yang lembut */
+  /* color: #333;  */
+  line-height: 1.6; /* Jarak antar baris */
+}
+
+.container {
+  width: 90%; /* Lebar kontainer utama */
+  max-width: 1000px; /* Lebar maksimum kontainer */
+  margin: 30px auto; /* Posisi kontainer di tengah dengan jarak atas-bawah */
+  background-color: #ffffff; /* Warna latar belakang kontainer */
+  padding: 25px; /* Padding di dalam kontainer */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Bayangan yang lebih modern */
+  border-radius: 8px; /* Sudut yang sedikit membulat */
+}
+
+/* Style untuk Menu Navigasi (Section 1) */
+.menu-nav {
+  padding: 10px 0px; /* Padding atas-bawah dan kiri-kanan */
+  border-bottom: 1px solid #e0e0e0; /* Garis bawah menu yang lebih halus */
+  margin-bottom: 30px; /* Jarak bawah dari menu */
+}
+.menu-nav table {
+  width: 100%; /* Tabel menu mengambil lebar penuh */
+}
+.menu-nav .brand {
+  font-size: 1.5em; /* Ukuran font untuk Brand */
+  font-weight: bold; /* Teks tebal untuk Brand */
+  color: #2c3e50; /* Warna brand */
+}
+.menu-nav .menu-items {
+  text-align: right; /* Posisi item menu di kanan */
+}
+.menu-nav .menu-items a {
+  margin-left: 20px; /* Jarak antar item menu */
+  text-decoration: none; /* Menghilangkan garis bawah link */
+  color: #3498db; /* Warna link menu (biru) */
+  font-weight: 500; /* Ketebalan font link menu */
+  transition: color 0.3s ease; /* Transisi halus untuk hover */
+}
+.menu-nav .menu-items a:hover,
+.menu-nav .menu-items a:focus {
+  color: #2980b9; /* Warna link menu saat disentuh mouse/fokus */
+  text-decoration: underline; /* Garis bawah saat hover */
+}
+
+/* Style untuk Section Header (Section 2) */
+.header-section table {
+  width: 100%; /* Tabel header mengambil lebar penuh */
+}
+.header-section .header-text {
+  width: 58%; /* Lebar kolom teks */
+  vertical-align: middle; /* Posisi vertikal teks di tengah */
+  padding-right: 30px; /* Jarak kanan dari teks */
+}
+.header-section .header-text h1 {
+  font-size: 2.5em; /* Ukuran font judul utama */
+  color: #2c3e50; /* Warna judul */
+  margin-top: 0; /* Menghilangkan margin atas default h1 */
+  margin-bottom: 15px; /* Jarak bawah judul */
+}
+.header-section .header-text p {
+  font-size: 1.1em; /* Ukuran font paragraf */
+  margin-bottom: 20px; /* Jarak bawah paragraf */
+}
+.header-section .header-text .cta-button {
+  /* Tombol "Pelajari Lebih Lanjut" */
+  display: inline-block;
+  background-color: #3498db;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+.header-section .header-text .cta-button:hover {
+  background-color: #2980b9;
+}
+.header-section .header-image-cell {
+  width: 42%; /* Lebar kolom gambar */
+  vertical-align: middle; /* Posisi vertikal gambar di tengah */
+}
+.header-section .header-image-placeholder {
+  width: 100%; /* Lebar placeholder gambar menyesuaikan sel */
+  height: 350px; /* Tinggi placeholder gambar (disesuaikan dari 600x400 agar proporsional) */
+  background-color: #ecf0f1; /* Warna latar placeholder yang lebih terang */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em; /* Ukuran font teks placeholder */
+  color: #95a5a6; /* Warna teks placeholder */
+  border-radius: 15px; /* Sudut membulat untuk placeholder */
+  object-fit: cover; /* Memastikan gambar menyesuaikan ukuran sel */
+  object-position: center 85%; /* Memposisikan gambar di tengah secara vertikal */
+}
+
+/* Style untuk Judul Section Umum */
+.section-title {
+  text-align: center; /* Teks di tengah untuk judul section */
+  font-size: 2em; /* Ukuran font judul section */
+  color: #2c3e50; /* Warna judul section */
+  margin-bottom: 10px; /* Jarak bawah judul section */
+}
+.section-subtitle {
+  text-align: center; /* Teks di tengah untuk sub-judul section */
+  font-size: 1em; /* Ukuran font sub-judul section */
+  color: #7f8c8d; /* Warna sub-judul section */
+  margin-bottom: 30px; /* Jarak bawah sub-judul section */
+}
+
+/* Style untuk Section About Me (Section 3) */
+.about-me-section {
+  padding-top: 20px; /* Padding atas section */
+}
+.about-me-section .biodata-table {
+  width: 100%; /* Lebar tabel biodata */
+  border-collapse: separate; /* Menggunakan separate agar border-spacing berfungsi */
+  border-spacing: 10px; /* Jarak antar sel (box) */
+}
+.about-me-section .biodata-table td {
+  border: 1px solid #e0e0e0; /* Border untuk setiap sel */
+  padding: 20px; /* Padding di dalam sel */
+  text-align: left; /* Teks di kiri untuk label biodata */
+  background-color: #fdfefe; /* Warna latar sel yang bersih */
+  border-radius: 5px; /* Sudut membulat untuk box */
+  width: 33.33%; /* Lebar setiap kolom (agar 3 kolom sama lebar) */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Bayangan halus untuk box */
+  font-weight: 500; /* Ketebalan font teks biodata */
+}
+
+.about-me-section .biodata-table td span {
+  margin-top: 10px; /* Jarak atas dari label ke nilai biodata */
+  color: #433097; /* Warna teks nilai biodata */
+  font-weight: bold; /* Teks nilai biodata tebal */
+}
+
+/* Style untuk Section Portofolio (Section 4) */
+.portfolio-section {
+  padding-top: 20px; /* Padding atas section */
+}
+.portfolio-section .portfolio-table {
+  width: 100%; /* Lebar tabel portofolio */
+  border-collapse: separate; /* Menggunakan separate agar border-spacing berfungsi */
+  border-spacing: 10px; /* Jarak antar sel (item portofolio) */
+}
+.portfolio-section .portfolio-table td {
+  width: 33.33%; /* Lebar setiap kolom (3 proyek) */
+  vertical-align: top; /* Posisi vertikal konten di atas */
+  text-align: center; /* Teks di tengah untuk deskripsi */
+  background-color: #fdfefe; /* Warna latar item portofolio */
+  padding: 15px; /* Padding di dalam sel */
+  border: 1px solid #e0e0e0; /* Border untuk item portofolio */
+  border-radius: 5px; /* Sudut membulat untuk item portofolio */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Bayangan halus untuk item */
+}
+.portfolio-section .portfolio-item .image-placeholder {
+  width: 100%; /* Lebar placeholder gambar menyesuaikan sel */
+  height: 150px; /* Tinggi placeholder gambar (disesuaikan dari 350x200) */
+  background-color: #ecf0f1; /* Warna latar placeholder */
+  display: flex; /* Menggunakan flexbox untuk menengahkan teks */
+  align-items: center; /* Menengahkan teks secara vertikal */
+  justify-content: center; /* Menengahkan teks secara horizontal */
+  font-size: 1em; /* Ukuran font teks placeholder */
+  color: #95a5a6; /* Warna teks placeholder */
+  border: 2px dashed #bdc3c7; /* Garis putus-putus placeholder */
+  margin-bottom: 15px; /* Jarak bawah placeholder dari teks */
+  border-radius: 5px; /* Sudut membulat untuk placeholder gambar */
+}
+.portfolio-section .portfolio-item h4 {
+  font-size: 1.2em; /* Ukuran font judul proyek */
+  color: #34495e; /* Warna judul proyek */
+  margin-top: 0; /* Margin atas judul proyek */
+  margin-bottom: 8px; /* Margin bawah judul proyek */
+}
+.portfolio-section .portfolio-item p {
+  font-size: 0.95em; /* Ukuran font deskripsi proyek */
+  color: #555; /* Warna teks deskripsi */
+  min-height: 40px; /* Tinggi minimum untuk deskripsi agar sejajar */
+}
+
+/* Garis pemisah antar section */
+hr.section-divider {
+  border: 0;
+  height: 1px;
+  background-color: #e0e0e0; /* Warna garis pemisah yang lebih halus */
+  margin: 50px 0; /* Jarak atas-bawah garis pemisah */
+}

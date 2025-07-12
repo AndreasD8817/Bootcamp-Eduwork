@@ -168,12 +168,16 @@
                     $harga_produk = $row['harga'];
                     $stok_produk = $row['stok'];
                     $kategori_produk = htmlspecialchars($row['kategori']);
-                    $gambar_produk = htmlspecialchars($row['gambar']); // Pastikan URL gambar juga dibersihkan
+                    // Mengambil nama file gambar dari database
+                    $gambar_produk_nama_file = htmlspecialchars($row['gambar']); 
 
-                    // --- Perubahan di sini: Langsung gunakan $gambar_produk sebagai path gambar ---
-                    // Karena sekarang kolom 'gambar' berisi URL lengkap, kita bisa langsung menggunakannya.
-                    // Jika $gambar_produk kosong, gunakan placeholder.
-                    $gambar_path = !empty($gambar_produk) ? $gambar_produk : "https://placehold.co/600x400/cccccc/333333?text=No+Image";
+                    // Menggabungkan folder 'images/' dengan nama file gambar
+                    // Asumsi folder 'images' berada di direktori yang sama dengan index.php
+                    $gambar_path = "images/" . $gambar_produk_nama_file;
+                    // Cek apakah file gambar ada di server lokal, jika tidak gunakan placeholder
+                    if (!file_exists($gambar_path) || empty($gambar_produk_nama_file)) {
+                        $gambar_path = "https://placehold.co/600x400/cccccc/333333?text=No+Image"; // Placeholder jika gambar tidak ditemukan
+                    }
             ?>
                     <!-- Kartu Produk Bootstrap -->
                     <div class="col">

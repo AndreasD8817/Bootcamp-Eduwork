@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Input Produk</title>
+  </head>
+  <body>
+    <h1>Tambah Produk Baru</h1>
+    <form action="proses.php" method="POST">
+      <label for="nama_produk">Nama Produk:</label><br />
+      <input type="text" id="nama_produk" name="nama_produk" /><br /><br />
+
+      <label for="harga_produk">Harga:</label><br />
+      <input type="number" id="harga_produk" name="harga_produk" /><br /><br />
+
+      <label for="deskripsi_produk">Deskripsi:</label><br />
+      <textarea
+        id="deskripsi_produk"
+        name="deskripsi_produk"
+        rows="5"
+        cols="40"
+      ></textarea
+      ><br /><br />
+
+      <input type="submit" value="Simpan Produk" />
+    </form>
+  </body>
+</html>

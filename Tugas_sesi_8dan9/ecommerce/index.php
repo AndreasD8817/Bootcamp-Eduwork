@@ -1,3 +1,38 @@
+<?php
+// ===============================================================
+// FILE: index.php (Halaman Tampilan Produk)
+// Deskripsi: Menampilkan daftar produk dan fitur keranjang.
+// ===============================================================
+session_start(); // Mulai sesi PHP
+
+// Memuat file koneksi database
+include 'koneksi.php';
+
+// Mendapatkan status login
+$is_logged_in = isset($_SESSION['user_id']);
+$user_nama = $is_logged_in ? htmlspecialchars($_SESSION['user_nama']) : '';
+
+// Mendapatkan jumlah item di keranjang
+$cart_item_count = 0;
+if ($is_logged_in) {
+    $user_id = $_SESSION['user_id'];
+    $sql_count = "SELECT SUM(quantity) AS total_items FROM cart_items WHERE user_id = ?";
+    $stmt_count = mysqli_prepare($koneksi, $sql_count);
+    mysqli_stmt_bind_param($stmt_count, "i", $user_id);
+    mysqli_stmt_execute($stmt_count);
+    $result_count = mysqli_stmt_get_result($stmt_count);
+    $row_count = mysqli_fetch_assoc($result_count);
+    $cart_item_count = $row_count['total_items'] ?? 0;
+    mysqli_stmt_close($stmt_count);
+} else {
+    if (isset($_SESSION['keranjang']) && is_array($_SESSION['keranjang'])) {
+        foreach ($_SESSION['keranjang'] as $qty) {
+            $cart_item_count += $qty;
+        }
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -6,6 +41,8 @@
     <title>Toko Online Saya</title>
     <!-- Memuat Bootstrap CSS dari CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Font Awesome untuk ikon keranjang -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* CSS kustom untuk sedikit penyesuaian */
         body {
@@ -75,6 +112,20 @@
             margin-top: 40px;
             border-radius: 10px 10px 0 0;
         }
+        .cart-icon {
+            position: relative;
+            margin-left: 15px;
+        }
+        .cart-badge {
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 0.7em;
+        }
     </style>
 </head>
 <body>
@@ -90,11 +141,31 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Beranda</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#">Kategori</a>
-                    </li>
-                    <li class="nav-item">
+                    </li> -->
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#">Kontak</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="keranjang.php">
+                            <i class="fas fa-shopping-cart"></i> Keranjang 
+                            <span class="cart-badge"><?php echo $cart_item_count; ?></span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <?php if ($is_logged_in): ?>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Halo, <?php echo $user_nama; ?>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Profil</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+                            </ul>
+                        <?php else: ?>
+                            <a class="nav-link" href="login.php">Login</a>
+                        <?php endif; ?>
                     </li>
                 </ul>
             </div>
@@ -109,13 +180,11 @@
         <div class="row mb-4">
             <div class="col-md-4 offset-md-4">
                 <form action="" method="GET" class="d-flex align-items-center flex-nowrap">
+                    <!-- Menambahkan style 'white-space: nowrap;' untuk mencegah teks label melipat -->
                     <label for="kategoriFilter" class="form-label me-2 mb-0" style="white-space: nowrap;">Filter Kategori:</label>
                     <select class="form-select" id="kategoriFilter" name="kategori" onchange="this.form.submit()">
                         <option value="">Semua Kategori</option>
                         <?php
-                        // Memuat file koneksi database
-                        include 'koneksi.php';
-
                         // Query untuk mendapatkan semua kategori unik
                         $sql_kategori = "SELECT DISTINCT kategori FROM products ORDER BY kategori ASC";
                         $result_kategori = mysqli_query($koneksi, $sql_kategori);
@@ -168,12 +237,11 @@
                     $harga_produk = $row['harga'];
                     $stok_produk = $row['stok'];
                     $kategori_produk = htmlspecialchars($row['kategori']);
-                    // Mengambil nama file gambar dari database
-                    $gambar_produk_nama_file = htmlspecialchars($row['gambar']); 
+                    $gambar_produk_nama_file = htmlspecialchars($row['gambar']); // Mengambil nama file gambar dari database
 
-                    // Menggabungkan folder 'images/' dengan nama file gambar
-                    // Asumsi folder 'images' berada di direktori yang sama dengan index.php
+                    // Menentukan path gambar lokal atau placeholder
                     $gambar_path = "images/" . $gambar_produk_nama_file;
+                    
                     // Cek apakah file gambar ada di server lokal, jika tidak gunakan placeholder
                     if (!file_exists($gambar_path) || empty($gambar_produk_nama_file)) {
                         $gambar_path = "https://placehold.co/600x400/cccccc/333333?text=No+Image"; // Placeholder jika gambar tidak ditemukan
@@ -182,14 +250,21 @@
                     <!-- Kartu Produk Bootstrap -->
                     <div class="col">
                         <div class="card product-card">
-                            <!-- Menggunakan $gambar_path yang sekarang berisi URL atau placeholder -->
+                            <!-- Menggunakan $gambar_path yang sekarang berisi path lokal atau placeholder -->
                             <img src="<?php echo $gambar_path; ?>" class="card-img-top" alt="<?php echo $nama_produk; ?>" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/333333?text=No+Image';">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $nama_produk; ?></h5>
                                 <p class="card-text"><?php echo $deskripsi_produk; ?></p>
                                 <p class="product-price">Rp <?php echo number_format($harga_produk, 0, ',', '.'); ?></p>
                                 <p class="card-text"><small class="text-muted">Stok: <?php echo $stok_produk; ?></small></p>
-                                <a href="#" class="btn btn-primary mt-auto">Lihat Detail</a>
+                                <!-- Form Tambah ke Keranjang -->
+                                <form action="tambah_ke_keranjang.php" method="POST" class="mt-2">
+                                    <input type="hidden" name="product_id" value="<?php echo $id_produk; ?>">
+                                    <input type="hidden" name="quantity" value="1"> <!-- Default 1 saat ditambahkan -->
+                                    <button type="submit" class="btn btn-success btn-sm w-100">
+                                        <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -215,7 +290,7 @@
         </div>
     </footer>
 
-    <!-- Memuat Bootstrap JS (Opsional, untuk fitur seperti navbar collapse) -->
+    <!-- Memuat Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

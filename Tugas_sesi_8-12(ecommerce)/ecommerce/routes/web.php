@@ -3,9 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/dashboard', function () {
@@ -17,9 +15,14 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-Route::get('/products', function () {
-    return view('dashboard.products.index');
-})->name('products');
+
+Route::middleware('admin')->group(function () {
+    Route::get('/products', function () {
+        return view('dashboard.products.index');
+    })->name('products');
+});
+
+
 
 Route::get('/products/tambah', function () {
     return view('dashboard.products.tambah');

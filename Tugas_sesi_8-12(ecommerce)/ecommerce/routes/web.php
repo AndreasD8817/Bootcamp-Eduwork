@@ -21,8 +21,27 @@ Route::get('/products', function () {
     return view('dashboard.products.index');
 })->name('products');
 
+Route::get('/products/tambah', function () {
+    return view('dashboard.products.tambah');
+})->name('products-tambah');
+
+Route::get('/products/edit', function () {
+    return view('dashboard.products.edit');
+})->name('products-edit');
+
 Route::get('/categories-products', function () {
     return view('dashboard.categories-products.index');
 })->name('categories-products');
+
+Route::get('/categories-products/tambah', function () {
+    return view('dashboard.categories-products.tambah');
+})->name('categories-products-tambah');
+
+
+Route::get('/categories-products/edit', function () {
+    return view('dashboard.categories-products.edit');
+})->name('categories-products-edit');
+
+
 
 require __DIR__.'/auth.php';

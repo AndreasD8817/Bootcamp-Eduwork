@@ -6,7 +6,7 @@
     </x-slot>
     <div class="container mt-5">
 
-        <a href="#" class="btn btn-primary mb-3">
+        <a href="{{ route('categories-products-tambah') }}" class="btn btn-primary mb-3">
             <i class="bi bi-plus-circle"></i> Tambah Kategori
         </a>
         <div class="table-responsive">
@@ -25,26 +25,8 @@
                         <td>Elektronik</td>
                         <td>150</td>
                         <td>
-                            <a href="#" class="btn btn-warning btn-sm me-2">Edit</a>
-                            <a href="#" class="btn btn-danger btn-sm">Hapus</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Pakaian</td>
-                        <td>230</td>
-                        <td>
-                            <a href="#" class="btn btn-warning btn-sm me-2">Edit</a>
-                            <a href="#" class="btn btn-danger btn-sm">Hapus</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Makanan & Minuman</td>
-                        <td>80</td>
-                        <td>
-                            <a href="#" class="btn btn-warning btn-sm me-2">Edit</a>
-                            <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                            <a href="{{ route('categories-products-edit') }}" class="btn btn-warning btn-sm me-2">Edit</a>
+                            <a href="{{ route('categories-products') }}" class="btn btn-danger btn-sm">Hapus</a>
                         </td>
                     </tr>
                 </tbody>

@@ -6,7 +6,7 @@
     </x-slot>
     <div class="container mt-5">
 
-        <a href="#" class="btn btn-success mb-3">
+        <a href="{{ route('products-tambah') }}" class="btn btn-success mb-3">
             <i class="bi bi-plus-circle"></i> Tambah Produk
         </a>
         <div class="table-responsive">
@@ -31,31 +31,7 @@
                         <td>150</td>
                         <td>150.000</td>
                         <td>
-                            <a href="#" class="btn btn-warning btn-sm me-2">Edit</a>
-                            <a href="#" class="btn btn-danger btn-sm">Hapus</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td><img src="https://placehold.co/100x100.png" alt="Kategori 2" class="img-fluid rounded"></td>
-                        <td>Pakaian</td>
-                        <td>Ini Deskripsi Singkat Kategori 2</td>
-                        <td>230</td>
-                        <td>230.000</td>
-                        <td>
-                            <a href="#" class="btn btn-warning btn-sm me-2">Edit</a>
-                            <a href="#" class="btn btn-danger btn-sm">Hapus</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td><img src="https://placehold.co/100x100.png" alt="Kategori 3" class="img-fluid rounded"></td>
-                        <td>Makanan & Minuman</td>
-                        <td>Ini Deskripsi Singkat Kategori 3</td>
-                        <td>80</td>
-                        <td>80.000</td>
-                        <td>
-                            <a href="#" class="btn btn-warning btn-sm me-2">Edit</a>
+                            <a href="{{ route('products-edit') }}" class="btn btn-warning btn-sm me-2">Edit</a>
                             <a href="#" class="btn btn-danger btn-sm">Hapus</a>
                         </td>
                     </tr>

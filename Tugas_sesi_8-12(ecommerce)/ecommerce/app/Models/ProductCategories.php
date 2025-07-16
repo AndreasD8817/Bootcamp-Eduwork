@@ -9,6 +9,6 @@ class ProductCategories extends Model
 {
     public function product()
     {
-        return $this->hasMany(products::class);
+        return $this->hasMany(product::class);
     }
 }

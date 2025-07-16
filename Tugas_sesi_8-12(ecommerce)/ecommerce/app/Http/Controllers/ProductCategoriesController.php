@@ -2,20 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Models\ProductCategories;
 
-class ProductController extends Controller
+class ProductCategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $products = Product::with('category')->
-                paginate(10);
-        return view('dashboard.products.index', 
-        compact('products'));
+        $categories = ProductCategories::withCount('product')
+                    ->paginate(10);
+        return view(
+            'dashboard.categories-products.index',
+            compact('categories')
+        );
     }
 
     /**
@@ -37,7 +39,7 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(product $product)
+    public function show(string $id)
     {
         //
     }
@@ -45,7 +47,7 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(product $product)
+    public function edit(string $id)
     {
         //
     }
@@ -53,7 +55,7 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, product $product)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -61,7 +63,7 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(product $product)
+    public function destroy(string $id)
     {
         //
     }

@@ -23,20 +23,23 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($products as $product)
                     <tr>
-                        <td>1</td>
-                        <td><img src="https://placehold.co/100x100.png" alt="Kategori 1" class="img-fluid rounded"></td>
-                        <td>Elektronik</td>
-                        <td>Ini Deskripsi Singkat Kategori 1</td>
-                        <td>150</td>
-                        <td>150.000</td>
+                        <td>{{$product->id}}</td>
+                        <td><img src="{{$product->image}}" alt="Kategori 1" class="img-fluid rounded" style="max-height: 100px;"></td>
+                        <td>{{$product->name}}</td>
+                        <td>{{$product->description}}</td>
+                        <td>{{$product->stock}}</td>
+                        <td>Rp {{ number_format($product->price, 0, ',', '.') }}</td>
                         <td>
                             <a href="{{ route('products-edit') }}" class="btn btn-warning btn-sm me-2">Edit</a>
                             <a href="#" class="btn btn-danger btn-sm">Hapus</a>
                         </td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
+        {{ $products->links()}}
     </div>
 </x-app-layout>

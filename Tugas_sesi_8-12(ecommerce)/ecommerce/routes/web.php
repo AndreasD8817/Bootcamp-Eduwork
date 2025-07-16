@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductCategoriesController;
+use App\Http\Controllers\ProductController;
 
 Route::get('/', [HomeController::class, 'index']);
 
@@ -20,6 +22,10 @@ Route::middleware('admin')->group(function () {
     Route::get('/products', function () {
         return view('dashboard.products.index');
     })->name('products');
+
+    Route::resource('product-categories', ProductCategoriesController::class);
+    Route::resource('products', ProductController::class);
+
 });
 
 

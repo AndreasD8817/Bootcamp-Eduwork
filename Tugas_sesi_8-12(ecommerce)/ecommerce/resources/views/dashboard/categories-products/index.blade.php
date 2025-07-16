@@ -13,22 +13,24 @@
             <table class="table table-bordered table-hover">
                 <thead class="table-dark text-center text-light">
                     <tr>
-                        <th>ID</th>
+                        <th>No</th>
                         <th>Nama Kategori</th>
                         <th>Jumlah Produk</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($categories as $category)
                     <tr>
-                        <td>1</td>
-                        <td>Elektronik</td>
-                        <td>150</td>
+                        <td class="text-center">{{ $category->id }}</td>
+                        <td>{{ $category->name }}</td>
+                        <td class="text-center">{{ $category->product_count }}</td>
                         <td>
-                            <a href="{{ route('categories-products-edit') }}" class="btn btn-warning btn-sm me-2">Edit</a>
-                            <a href="{{ route('categories-products') }}" class="btn btn-danger btn-sm">Hapus</a>
+                            <a href="{{ route('categories-products-edit') }}" class="btn btn-warning btn-sm me-2 justify-content-center">Edit</a>
+                            <a href="#" class="btn btn-danger btn-sm justify-content-center">Hapus</a>
                         </td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
